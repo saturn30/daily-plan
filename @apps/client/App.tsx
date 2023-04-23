@@ -1,4 +1,4 @@
-import { Test } from '@packages/ui';
+import { Test } from '@packages/app';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
 
