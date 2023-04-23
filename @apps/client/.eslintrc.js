@@ -1,3 +1,5 @@
+const path = require('path');
+
 module.exports = {
   extends: ['@config/eslint-config-react'],
   parserOptions: {
@@ -5,9 +7,11 @@ module.exports = {
     project: ['tsconfig.json'],
   },
   rules: {},
-  setting: {
+  settings: {
     'import/resolver': {
-      typescript: './tsconfig.json',
+      typescript: {
+        project: path.join(__dirname, 'tsconfig.json'),
+      },
     },
   },
 };
