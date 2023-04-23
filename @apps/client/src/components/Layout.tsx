@@ -17,4 +17,5 @@ export const Layout = ({ children }: Props) => {
 
 const Wrap = styled.SafeAreaView`
   flex: 1;
+  background-color: ${({ theme }) => theme.color.background};
 `;

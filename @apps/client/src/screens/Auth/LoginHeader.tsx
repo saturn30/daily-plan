@@ -1,7 +1,5 @@
 import styled from '@emotion/native';
 
-import { TEXT_COLOR } from '@/constants';
-
 export const LoginHeader = () => {
   return (
     <S.Wrap>
@@ -24,14 +22,14 @@ const S = {
     font-weight: 700;
     font-size: 36px;
     line-height: 46px;
-    color: ${TEXT_COLOR.PRIMARY};
+    color: ${({ theme }) => theme.color.primaryText};
   `,
   Desc: styled.Text`
     margin-top: 10px;
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-    color: ${TEXT_COLOR.SECONDARY};
+    color: ${({ theme }) => theme.color.secondaryText};
     text-align: center;
   `,
 };

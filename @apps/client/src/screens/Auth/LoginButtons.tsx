@@ -1,7 +1,5 @@
 import styled from '@emotion/native';
 
-import { COLOR } from '@/constants';
-
 export const LoginButtons = () => {
   return (
     <S.Wrap>
@@ -29,12 +27,15 @@ const S = {
     align-items: center;
     margin: 0 32px;
     padding: 18px;
-    border: 1.5px solid ${COLOR.SECONDARY_TINT};
+    background-color: ${({ theme }) => theme.color.tint};
+    border: 1.5px solid ${({ theme }) => theme.color.tintLine};
     border-radius: 20px;
 
     & + & {
       margin-top: 24px;
     }
   `,
-  ButtonText: styled.Text``,
+  ButtonText: styled.Text`
+    color: ${({ theme }) => theme.color.primaryText};
+  `,
 };
