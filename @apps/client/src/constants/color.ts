@@ -1,0 +1,11 @@
+export const COLOR = {
+  PRIMARY: '#7E85F9',
+  SECONDARY: '#75BFCF',
+  WARNING: '#FE6C6B',
+  SECONDARY_TINT: '#F2F8FA',
+};
+
+export const TEXT_COLOR = {
+  PRIMARY: '##031637',
+  SECONDARY: '#8A8E9C',
+};

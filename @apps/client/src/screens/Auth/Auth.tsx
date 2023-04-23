@@ -1,11 +1,13 @@
-import { Text } from 'react-native';
-
 import { Layout } from '@/components/Layout';
+
+import { LoginButtons } from './LoginButtons';
+import { LoginHeader } from './LoginHeader';
 
 export const AuthScreen = () => {
   return (
     <Layout>
-      <Text>AuthScreen</Text>
+      <LoginHeader />
+      <LoginButtons />
     </Layout>
   );
 };
