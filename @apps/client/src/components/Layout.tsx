@@ -15,6 +15,6 @@ export const Layout = ({ children }: Props) => {
   );
 };
 
-const Wrap = styled.View`
+const Wrap = styled.SafeAreaView`
   flex: 1;
 `;

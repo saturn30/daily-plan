@@ -1,3 +1,3 @@
-import { AuthScreen } from '@packages/app';
+import { AuthScreen } from './src/screens/Auth';
 
 export default AuthScreen;

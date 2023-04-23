@@ -5,4 +5,9 @@ module.exports = {
     project: ['tsconfig.json'],
   },
   rules: {},
+  setting: {
+    'import/resolver': {
+      typescript: './tsconfig.json',
+    },
+  },
 };

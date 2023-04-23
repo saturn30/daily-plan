@@ -10,6 +10,7 @@
     "@config/*"
   ],
   "scripts": {
-    "client": "yarn workspace @apps/client"
+    "client": "yarn workspace @apps/client",
+    "watch": "yarn workspace @packages/app dev"
   }
 }

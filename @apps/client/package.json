@@ -9,7 +9,8 @@
     "web": "expo start --web"
   },
   "dependencies": {
-    "@packages/app": "*",
+    "@emotion/native": "^11.10.6",
+    "@emotion/react": "^11.10.6",
     "expo": "~48.0.11",
     "expo-status-bar": "~1.4.4",
     "react": "18.2.0",
