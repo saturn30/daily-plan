@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { getTheme } from '@/styles';
 
-import { AuthScreen } from './src/screens/Auth';
+import { AuthScreen } from './screens/Auth';
 
 void SplashScreen.preventAutoHideAsync();
 
