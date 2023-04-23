@@ -10,7 +10,6 @@
     "@config/*"
   ],
   "scripts": {
-    "openai": "yarn workspace @apps/openai-proxy-server",
-    "mediapp": "yarn workspace @apps/meditation-app"
+    "client": "yarn workspace @apps/client"
   }
 }
