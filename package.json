@@ -1,0 +1,16 @@
+{
+  "name": "app-station",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "soso01 <soso01dev@gmail.com>",
+  "private": true,
+  "workspaces": [
+    "@apps/*",
+    "@packages/*",
+    "@config/*"
+  ],
+  "scripts": {
+    "openai": "yarn workspace @apps/openai-proxy-server",
+    "mediapp": "yarn workspace @apps/meditation-app"
+  }
+}
