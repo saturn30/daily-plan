@@ -9,7 +9,7 @@ export const COLOR = {
   DARK_TINT_LINE: '#142B50',
   DARK_TINT: '#0C2040',
   LIGHT_TINT_LINE: '#F2F8FA',
-  LIGHT_TINT: '#FCFCFC',
+  LIGHT_TINT: '#ffffff',
 };
 
 export const TEXT_COLOR = {

@@ -4,5 +4,6 @@ export const ImageAssets = {
   Login: {
     Google: require(base + 'login/google.png'),
     Apple: require(base + 'login/apple.png'),
+    Guest: require(base + 'login/guest.png'),
   },
 };

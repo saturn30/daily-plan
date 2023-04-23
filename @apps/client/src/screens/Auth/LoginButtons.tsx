@@ -15,6 +15,11 @@ export const LoginButtons = () => {
         <S.Icon source={ImageAssets.Login.Apple} />
         <S.ButtonText>Sign In With Apple</S.ButtonText>
       </S.Button>
+
+      <S.Button>
+        <S.Icon source={ImageAssets.Login.Guest} />
+        <S.ButtonText>Sign In With Guest</S.ButtonText>
+      </S.Button>
     </S.Wrap>
   );
 };
