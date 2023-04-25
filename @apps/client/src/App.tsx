@@ -1,4 +1,5 @@
 import { ThemeProvider } from '@emotion/react';
+import { NavigationContainer } from '@react-navigation/native';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
@@ -19,8 +20,10 @@ export default function App() {
   }, [isLoading]);
 
   return (
-    <ThemeProvider theme={getTheme({ isDark })}>
-      <AuthScreen />
-    </ThemeProvider>
+    <NavigationContainer>
+      <ThemeProvider theme={getTheme({ isDark })}>
+        <AuthScreen />
+      </ThemeProvider>
+    </NavigationContainer>
   );
 }
