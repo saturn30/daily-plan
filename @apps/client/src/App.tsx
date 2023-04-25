@@ -6,7 +6,8 @@ import { useEffect } from 'react';
 import { useDarkMode } from '@/hooks/useDarkMode';
 import { getTheme } from '@/styles';
 
-import { AuthScreen } from './screens/Auth';
+import { BottomNavigator } from './navigators';
+// import { AuthScreen } from './screens/Auth';
 
 void SplashScreen.preventAutoHideAsync();
 
@@ -22,7 +23,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <ThemeProvider theme={getTheme({ isDark })}>
-        <AuthScreen />
+        {/* <AuthScreen /> */}
+        <BottomNavigator />
       </ThemeProvider>
     </NavigationContainer>
   );
