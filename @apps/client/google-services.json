@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "398996921980",
+    "project_id": "today-app-d170e",
+    "storage_bucket": "today-app-d170e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:398996921980:android:d20191b1bca1c2d738b3f9",
+        "android_client_info": {
+          "package_name": "com.today.bluehead"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "398996921980-katn9p636hitdqb4hjqbjc547fe5ulcs.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBeBV3xTzWfyOTMB8wG3b0CcBEBv9DdTQM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "398996921980-katn9p636hitdqb4hjqbjc547fe5ulcs.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "398996921980-7lq437j44np0r58sime7utufrfqgave2.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.today.bluehead"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
