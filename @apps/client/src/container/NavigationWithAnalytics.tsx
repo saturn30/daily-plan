@@ -17,7 +17,7 @@ export const NavigationWithAnalytics = ({ children }: PropsWithChildren) => {
     const previousRouteName = prevRouteNameRef.current;
     const currentRouteName = getCurrentRouteName();
 
-    if (previousRouteName !== currentRouteName) {
+    if (currentRouteName.length > 0 && previousRouteName !== currentRouteName) {
       await analytics().logScreenView({
         screen_name: currentRouteName,
         screen_class: currentRouteName,

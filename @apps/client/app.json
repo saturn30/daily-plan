@@ -13,16 +13,16 @@
     },
     "assetBundlePatterns": ["**/*"],
     "ios": {
-      "supportsTablet": true,
+      "bundleIdentifier": "com.today.bluehead",
       "googleServicesFile": "./GoogleService-Info.plist",
-      "bundleIdentifier": "com.today.bluehead"
+      "supportsTablet": true
     },
     "android": {
-      "bundleIdentifier": "com.today.bluehead",
+      "package": "com.today.bluehead",
+      "googleServicesFile": "./google-services.json",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        "googleServicesFile": "./google-services.json"
+        "backgroundColor": "#ffffff"
       }
     },
     "web": {
