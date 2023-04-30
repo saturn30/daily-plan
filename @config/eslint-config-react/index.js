@@ -6,7 +6,6 @@ module.exports = {
   },
   extends: [
     'plugin:react/recommended',
-    'standard-with-typescript',
     'plugin:prettier/recommended',
     'plugin:import/recommended',
     'plugin:import/typescript',
