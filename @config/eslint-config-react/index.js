@@ -7,8 +7,10 @@ module.exports = {
   extends: [
     'plugin:react/recommended',
     'plugin:prettier/recommended',
+    'standard-with-typescript',
     'plugin:import/recommended',
     'plugin:import/typescript',
+    'prettier',
   ],
   overrides: [],
   parserOptions: {
@@ -19,6 +21,8 @@ module.exports = {
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
     'react/react-in-jsx-scope': 'off',
+    '@typescript-eslint/no-floating-promises': 'off',
+    '@typescript-eslint/no-misused-promises': 'off',
     'import/order': [
       'error',
       {
