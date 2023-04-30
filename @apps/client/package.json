@@ -4,7 +4,7 @@
   "types": "./src/types/index.d.ts",
   "main": "index.ts",
   "scripts": {
-    "start": "expo start",
+    "start": "expo start --dev-client",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web"
@@ -13,11 +13,13 @@
     "@emotion/native": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@react-native-async-storage/async-storage": "1.17.11",
+    "@react-native-firebase/analytics": "^17.4.3",
     "@react-native-firebase/app": "^17.4.3",
     "@react-navigation/bottom-tabs": "^6.5.7",
     "@react-navigation/native": "^6.1.6",
     "@react-navigation/native-stack": "^6.9.12",
     "expo": "~48.0.11",
+    "expo-build-properties": "~0.6.0",
     "expo-dev-client": "~2.2.1",
     "expo-image": "~1.0.0",
     "expo-splash-screen": "~0.18.1",
