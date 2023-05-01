@@ -11,6 +11,10 @@ export const getTheme = ({ isDark }: { isDark: boolean }) => {
 
       tintLine: isDark ? COLOR.DARK_TINT_LINE : COLOR.LIGHT_TINT_LINE,
       tint: isDark ? COLOR.DARK_TINT : COLOR.LIGHT_TINT,
+
+      primary: COLOR.PRIMARY,
+      secondary: COLOR.SECONDARY,
+      warning: COLOR.WARNING,
     },
   };
 };
