@@ -7,6 +7,7 @@ import { useDarkMode } from '@/common/hooks/useDarkMode';
 import { getTheme } from '@/common/styles';
 
 import { useAuth } from './features/auth';
+import { LoadingContainer } from './features/ui';
 import { BottomNavigator } from './navigators';
 import { AuthScreen } from './screens';
 
@@ -26,6 +27,7 @@ export default function App() {
     <NavigationProviderWithAnalytics>
       <ThemeProvider theme={getTheme({ isDark })}>
         {isAuth ? <BottomNavigator /> : <AuthScreen />}
+        <LoadingContainer />
       </ThemeProvider>
     </NavigationProviderWithAnalytics>
   );
