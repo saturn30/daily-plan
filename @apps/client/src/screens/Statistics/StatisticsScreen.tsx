@@ -1,6 +1,6 @@
 import { Text } from 'react-native';
 
-import { Layout } from '@/components/Layout';
+import { Layout } from '@/common/components/Layout';
 
 export const StatisticsScreen = () => {
   return (

@@ -1,7 +1,7 @@
 import styled from '@emotion/native';
 import { Image } from 'expo-image';
 
-import { ImageAssets } from '@/constants';
+import { ImageAssets } from '@/common/constants';
 
 export const LoginButtons = () => {
   return (

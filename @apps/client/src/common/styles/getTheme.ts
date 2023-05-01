@@ -1,4 +1,4 @@
-import { COLOR, TEXT_COLOR } from '@/constants';
+import { COLOR, TEXT_COLOR } from '@/common/constants';
 
 export const getTheme = ({ isDark }: { isDark: boolean }) => {
   return {

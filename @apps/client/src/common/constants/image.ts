@@ -1,4 +1,4 @@
-const base = '../../assets/';
+const base = '../../../assets/';
 
 export const ImageAssets = {
   Login: {

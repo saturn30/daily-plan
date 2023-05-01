@@ -2,11 +2,11 @@ import { ThemeProvider } from '@emotion/react';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 
-import { useDarkMode } from '@/hooks/useDarkMode';
-import { getTheme } from '@/styles';
+import { useDarkMode } from '@/common/hooks/useDarkMode';
+import { getTheme } from '@/common/styles';
 
 // import { BottomNavigator } from './navigators';
-import { NavigationWithAnalytics } from './container/NavigationWithAnalytics';
+import { NavigationWithAnalytics } from './common/container/NavigationWithAnalytics';
 import { AuthScreen } from './screens/Auth';
 
 void SplashScreen.preventAutoHideAsync();

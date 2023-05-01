@@ -1,4 +1,4 @@
-import { type getTheme } from '@/styles';
+import { type getTheme } from '@/common/styles';
 import '@emotion/react';
 
 type A = ReturnType<getTheme>;

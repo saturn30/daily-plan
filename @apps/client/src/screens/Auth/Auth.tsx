@@ -1,4 +1,4 @@
-import { Layout } from '@/components/Layout';
+import { Layout } from '@/common/components/Layout';
 
 import { LoginButtons } from './LoginButtons';
 import { LoginHeader } from './LoginHeader';

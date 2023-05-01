@@ -2,7 +2,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useEffect, useState } from 'react';
 import { useColorScheme } from 'react-native';
 
-import { STORAGE_KEY } from '@/constants';
+import { STORAGE_KEY } from '@/common/constants';
 
 const getStorageColorScheme = async () => {
   const result = await AsyncStorage.getItem(STORAGE_KEY.COLOR_SCHEME);
