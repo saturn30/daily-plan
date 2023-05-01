@@ -8,11 +8,13 @@ export const LoadingContainer = () => {
   const { isLoading } = useLoadingStore();
 
   return (
-    isLoading && (
-      <S.Wrap>
-        <CircleLoader />
-      </S.Wrap>
-    )
+    <>
+      {isLoading && (
+        <S.Wrap>
+          <CircleLoader />
+        </S.Wrap>
+      )}
+    </>
   );
 };
 
