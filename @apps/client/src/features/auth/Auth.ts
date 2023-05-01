@@ -1,8 +1,12 @@
 import auth from '@react-native-firebase/auth';
 
+import { wrapAsyncLoading } from '../ui';
+
 class Auth {
   guestSignIn = async () => {
-    await auth().signInAnonymously();
+    await wrapAsyncLoading(async () => {
+      await auth().signInAnonymously();
+    });
     console.log('guest login');
   };
 

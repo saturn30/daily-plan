@@ -2,11 +2,17 @@ import styled from '@emotion/native';
 
 import { CircleLoader } from '@/common/components';
 
+import { useLoadingStore } from './useLoadingStore';
+
 export const LoadingContainer = () => {
+  const { isLoading } = useLoadingStore();
+
   return (
-    <S.Wrap>
-      <CircleLoader />
-    </S.Wrap>
+    isLoading && (
+      <S.Wrap>
+        <CircleLoader />
+      </S.Wrap>
+    )
   );
 };
 
