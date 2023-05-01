@@ -8,11 +8,11 @@ export const SmallCalendarContainer = () => {
   const [days, setDays] = useState(() => createDefaultDays(selectedDay));
 
   const onNextButtonClick = () => {
-    updateDays((day) => day.add(5, 'day'));
+    updateDays((day) => day.add(7, 'day'));
   };
 
   const onPrevButtonClick = () => {
-    updateDays((day) => day.subtract(5, 'day'));
+    updateDays((day) => day.subtract(7, 'day'));
   };
 
   return (
