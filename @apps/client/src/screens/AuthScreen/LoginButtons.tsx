@@ -3,7 +3,11 @@ import { Image } from 'expo-image';
 
 import { ImageAssets } from '@/common/constants';
 
-export const LoginButtons = () => {
+interface Props {
+  onGuestLogin: () => void;
+}
+
+export const LoginButtons = ({ onGuestLogin }: Props) => {
   return (
     <S.Wrap>
       <S.Button>
@@ -16,7 +20,7 @@ export const LoginButtons = () => {
         <S.ButtonText>Sign In With Apple</S.ButtonText>
       </S.Button>
 
-      <S.Button>
+      <S.Button onPress={onGuestLogin}>
         <S.Icon source={ImageAssets.Login.Guest} />
         <S.ButtonText>Sign In With Guest</S.ButtonText>
       </S.Button>
