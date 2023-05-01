@@ -10,18 +10,22 @@ export const BUTTON_THEME = {
 };
 
 const S = {
-  Wrap: styled.TouchableOpacity<{ theme: keyof typeof BUTTON_THEME }>`
+  Wrap: styled.TouchableOpacity<{ theme?: keyof typeof BUTTON_THEME }>`
     background-color: ${({ theme }) => {
       switch (theme) {
-        case BUTTON_THEME.PRIMARY:
-          return COLOR.PRIMARY;
+        case BUTTON_THEME.WARNING:
+          return COLOR.WARNING;
         case BUTTON_THEME.SECONDARY:
           return COLOR.SECONDARY;
+        case BUTTON_THEME.PRIMARY:
+          return COLOR.PRIMARY;
         default:
-          return COLOR.WARNING;
+          return COLOR.PRIMARY;
       }
     }};
-    border-radius: 24px;
+    padding: 12px;
+    align-items: center;
+    border-radius: 12px;
   `,
   Text: styled.Text`
     font-weight: 600;
@@ -31,4 +35,7 @@ const S = {
   `,
 };
 
-export const Button = Object.assign(S.Wrap, omit(S, 'Wrap'));
+export const Button = Object.assign(S.Wrap, {
+  ...omit(S, 'Wrap'),
+  theme: BUTTON_THEME,
+});
