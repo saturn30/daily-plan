@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "398996921980-katn9p636hitdqb4hjqbjc547fe5ulcs.apps.googleusercontent.com",
+          "client_id": "398996921980-2r3b4i61mmupe7760j2n3l61vpnta05e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.today.bluehead",
+            "certificate_hash": "71ed2ddcdae8f826fd245c9a57756851c83aca2a"
+          }
+        },
+        {
+          "client_id": "398996921980-ctkbft2geqh66cff5nh99080q741tvvn.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "398996921980-katn9p636hitdqb4hjqbjc547fe5ulcs.apps.googleusercontent.com",
+              "client_id": "398996921980-ctkbft2geqh66cff5nh99080q741tvvn.apps.googleusercontent.com",
               "client_type": 3
             },
             {
