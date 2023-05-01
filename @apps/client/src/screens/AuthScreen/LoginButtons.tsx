@@ -5,12 +5,13 @@ import { ImageAssets } from '@/common/constants';
 
 interface Props {
   onGuestLogin: () => void;
+  onGoogleLogin: () => void;
 }
 
-export const LoginButtons = ({ onGuestLogin }: Props) => {
+export const LoginButtons = ({ onGuestLogin, onGoogleLogin }: Props) => {
   return (
     <S.Wrap>
-      <S.Button>
+      <S.Button onPress={onGoogleLogin}>
         <S.Icon source={ImageAssets.Login.Google} />
         <S.ButtonText>Sign In With Google</S.ButtonText>
       </S.Button>

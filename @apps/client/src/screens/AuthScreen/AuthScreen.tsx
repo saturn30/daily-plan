@@ -8,7 +8,10 @@ export const AuthScreen = () => {
   return (
     <Layout>
       <LoginHeader />
-      <LoginButtons onGuestLogin={appAuth.guestSignIn} />
+      <LoginButtons
+        onGoogleLogin={appAuth.googleSignIn}
+        onGuestLogin={appAuth.guestSignIn}
+      />
     </Layout>
   );
 };
