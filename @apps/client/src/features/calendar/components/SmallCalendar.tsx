@@ -22,28 +22,39 @@ export const SmallCalendar = ({
   onPrevButtonClick,
 }: Props) => {
   return (
-    <S.Wrap>
-      <S.IconWrap onPress={onPrevButtonClick}>
-        <S.Icon name="left" size={20} color={COLOR.DARK_TINT_LINE} />
-      </S.IconWrap>
-      <S.ButtonWrap>
-        {days.map((day) => (
-          <DayButton
-            key={day.toISOString()}
-            day={day}
-            isSelected={day === selectedDay}
-            onSelect={onSelect}
-          />
-        ))}
-      </S.ButtonWrap>
-      <S.IconWrap onPress={onNextButtonClick}>
-        <S.Icon name="right" size={20} color={COLOR.DARK_TINT_LINE} />
-      </S.IconWrap>
-    </S.Wrap>
+    <>
+      <S.Title>
+        {selectedDay.year()}. {selectedDay.month() + 1}
+      </S.Title>
+      <S.Wrap>
+        <S.IconWrap onPress={onPrevButtonClick}>
+          <S.Icon name="left" size={20} color={COLOR.DARK_TINT_LINE} />
+        </S.IconWrap>
+        <S.ButtonWrap>
+          {days.map((day) => (
+            <DayButton
+              key={day.toISOString()}
+              day={day}
+              isSelected={day === selectedDay}
+              onSelect={onSelect}
+            />
+          ))}
+        </S.ButtonWrap>
+        <S.IconWrap onPress={onNextButtonClick}>
+          <S.Icon name="right" size={20} color={COLOR.DARK_TINT_LINE} />
+        </S.IconWrap>
+      </S.Wrap>
+    </>
   );
 };
 
 const S = {
+  Title: styled.Text`
+    padding: 20px 28px 16px;
+    font-weight: 700;
+    font-size: 24px;
+    color: ${({ theme }) => theme.color.primaryText};
+  `,
   Wrap: styled.View`
     flex-direction: row;
     align-items: center;
