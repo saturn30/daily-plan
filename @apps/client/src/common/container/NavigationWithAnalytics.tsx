@@ -5,7 +5,9 @@ import {
 } from '@react-navigation/native';
 import { type PropsWithChildren, useRef } from 'react';
 
-export const NavigationWithAnalytics = ({ children }: PropsWithChildren) => {
+export const NavigationProviderWithAnalytics = ({
+  children,
+}: PropsWithChildren) => {
   const prevRouteNameRef = useRef('');
   const navigationRef = useRef<NavigationContainerRef<any>>(null);
 
