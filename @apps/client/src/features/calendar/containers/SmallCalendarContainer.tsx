@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { SmallCalendar } from '../components';
 
 export const SmallCalendarContainer = () => {
-  const [days, setDays] = useState(() => createDefaultDays());
-  const [selectedDay, setSelectedDay] = useState(days[2]);
+  const [selectedDay, setSelectedDay] = useState(dayjs());
+  const [days, setDays] = useState(() => createDefaultDays(selectedDay));
 
   const onNextButtonClick = () => {
     updateDays((day) => day.add(5, 'day'));
@@ -25,15 +25,15 @@ export const SmallCalendarContainer = () => {
     />
   );
 
-  function createDefaultDays() {
-    const now = dayjs();
-    return [
-      now.subtract(2, 'day'),
-      now.subtract(1, 'day'),
-      now,
-      now.add(1, 'day'),
-      now.add(2, 'day'),
-    ];
+  function createDefaultDays(now: Dayjs) {
+    const base = now.subtract(now.day(), 'day');
+    const result = [];
+
+    for (let i = 0; i < 7; i++) {
+      result.push(base.add(i, 'day'));
+    }
+
+    return result;
   }
 
   function updateDays(callback: (value: Dayjs) => Dayjs) {
