@@ -1,63 +1,63 @@
 import styled from '@emotion/native';
+import { AntDesign } from '@expo/vector-icons';
 import { type Dayjs } from 'dayjs';
+
+import { COLOR } from '@/common/constants';
+
+import { DayButton } from './DayButton';
 
 interface Props {
   days: Dayjs[];
   selectedDay: Dayjs;
   onSelect: (value: Dayjs) => void;
+  onNextButtonClick: () => void;
+  onPrevButtonClick: () => void;
 }
 
-const DayString = ['Sun', 'Mon', 'Tus', 'Wed', 'Thu', 'Fri', 'Sat'];
-
-export const SmallCalendar = ({ days, selectedDay, onSelect }: Props) => {
+export const SmallCalendar = ({
+  days,
+  selectedDay,
+  onSelect,
+  onNextButtonClick,
+  onPrevButtonClick,
+}: Props) => {
   return (
     <S.Wrap>
-      {days.map((day) => {
-        const isSelected = day === selectedDay;
-
-        return (
-          <S.Day
+      <S.IconWrap onPress={onPrevButtonClick}>
+        <S.Icon name="left" size={20} color={COLOR.DARK_TINT_LINE} />
+      </S.IconWrap>
+      <S.ButtonWrap>
+        {days.map((day) => (
+          <DayButton
             key={day.toISOString()}
-            isSelected={isSelected}
-            onPress={() => {
-              onSelect(day);
-            }}
-          >
-            <>
-              <S.DayText isSelected={isSelected}>{day.date()}</S.DayText>
-              <S.DayText isSelected={isSelected}>
-                {DayString[day.day()]}
-              </S.DayText>
-            </>
-          </S.Day>
-        );
-      })}
+            day={day}
+            isSelected={day === selectedDay}
+            onSelect={onSelect}
+          />
+        ))}
+      </S.ButtonWrap>
+      <S.IconWrap onPress={onNextButtonClick}>
+        <S.Icon name="right" size={20} color={COLOR.DARK_TINT_LINE} />
+      </S.IconWrap>
     </S.Wrap>
   );
 };
 
 const S = {
   Wrap: styled.View`
-    padding: 0 20px;
     flex-direction: row;
+    align-items: center;
     justify-content: space-between;
   `,
-  Day: styled.TouchableOpacity<{ isSelected: boolean }>`
-    align-items: center;
-
-    padding: 20px;
-    border: ${({ isSelected, theme }) =>
-      `1.5px solid ${isSelected ? 'transparent' : theme.color.tintLine}`};
-    border-radius: 24px;
-    background-color: ${({ isSelected, theme }) =>
-      isSelected ? theme.color.primary : theme.color.tint};
+  ButtonWrap: styled.View`
+    flex: 1;
+    flex-direction: row;
+    gap: 8px;
   `,
-  DayText: styled.Text<{ isSelected: boolean }>`
-    color: ${({ isSelected, theme }) =>
-      isSelected ? 'white' : theme.color.primaryText};
-    font-size: 16px;
-    & + & {
-      margin-top: 8px;
-    }
+  IconWrap: styled.TouchableOpacity`
+    padding: 12px;
+  `,
+  Icon: styled(AntDesign)`
+    color: ${({ theme }) => theme.color.secondaryText};
   `,
 };
