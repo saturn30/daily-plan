@@ -1,6 +1,8 @@
 import { ThemeProvider } from '@emotion/react';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import 'react-native-reanimated';
+import 'react-native-gesture-handler';
 
 import { NavigationProviderWithAnalytics } from '@/common/container';
 import { useDarkMode } from '@/common/hooks/useDarkMode';
