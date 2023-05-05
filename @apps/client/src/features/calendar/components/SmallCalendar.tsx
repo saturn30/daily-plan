@@ -22,8 +22,8 @@ export const SmallCalendar = ({
   onPrevButtonClick,
 }: Props) => {
   return (
-    <>
-      <S.Wrap>
+    <S.Wrap>
+      <S.RowWrap>
         <S.IconWrap onPress={onPrevButtonClick}>
           <S.Icon name="left" size={16} color={COLOR.DARK_TINT_LINE} />
         </S.IconWrap>
@@ -33,8 +33,8 @@ export const SmallCalendar = ({
         <S.IconWrap onPress={onNextButtonClick}>
           <S.Icon name="right" size={16} color={COLOR.DARK_TINT_LINE} />
         </S.IconWrap>
-      </S.Wrap>
-      <S.Wrap>
+      </S.RowWrap>
+      <S.RowWrap>
         <S.ButtonWrap>
           {days.map((day) => (
             <DayButton
@@ -45,22 +45,26 @@ export const SmallCalendar = ({
             />
           ))}
         </S.ButtonWrap>
-      </S.Wrap>
-    </>
+      </S.RowWrap>
+    </S.Wrap>
   );
 };
 
 const S = {
+  Wrap: styled.View`
+    padding-bottom: 8px;
+    border-bottom-width: 1px;
+    border-color: ${({ theme }) => theme.color.tintLine};
+  `,
   Title: styled.Text`
     padding: 20px 0 16px;
     font-weight: 700;
     font-size: 24px;
     color: ${({ theme }) => theme.color.primaryText};
   `,
-  Wrap: styled.View`
+  RowWrap: styled.View`
     flex-direction: row;
     align-items: center;
-
     padding: 0 20px;
   `,
   ButtonWrap: styled.View`
