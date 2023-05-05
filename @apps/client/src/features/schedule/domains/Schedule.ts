@@ -1,6 +1,6 @@
 import { type Dayjs } from 'dayjs';
 
-interface Params {
+export interface ScheduleParams {
   id: string;
   start: Dayjs;
   end: Dayjs;
@@ -16,7 +16,7 @@ export class Schedule {
   id: string;
   duration: number;
 
-  constructor(params: Params) {
+  constructor(params: ScheduleParams) {
     this.id = params.id;
     this.start = params.start;
     this.end = params.end;
@@ -35,11 +35,6 @@ export class Schedule {
 
   get lineHeight() {
     return (this.end.diff(this.start, 'm') / 15 + 1) * 15;
-  }
-
-  get description() {
-    if (this.isZeroDuration) return this.startTime;
-    return `${this.startTime} ~ ${this.endTime} (${this.duration}m)`;
   }
 
   get isZeroDuration() {

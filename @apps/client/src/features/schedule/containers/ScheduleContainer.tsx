@@ -1,55 +1,65 @@
 import styled from '@emotion/native';
 import dayjs from 'dayjs';
+import { useMemo } from 'react';
 
-import { ScheduleRow } from '../components';
+import { ScheduleRow, ScheduleSpaceRow } from '../components';
 import { Schedule } from '../domains';
+import { scheduleFactory } from '../useCases';
 
-const schedules = [
-  new Schedule({
+const data = [
+  {
     id: '1',
     start: dayjs('2023-01-01 07:00:00'),
     end: dayjs('2023-01-01 07:00:00'),
     title: '기상',
-    color: 'yellow',
-  }),
-  new Schedule({
+    color: '#ffbe0b',
+  },
+  {
     id: '2',
     start: dayjs('2023-01-01 09:00:00'),
     end: dayjs('2023-01-01 10:00:00'),
     title: '아침 식사',
-    color: 'blue',
-  }),
-  new Schedule({
+    color: '#ffc8dd',
+  },
+  {
     id: '3',
     start: dayjs('2023-01-01 10:20:00'),
     end: dayjs('2023-01-01 11:00:00'),
     title: '아침 산책',
-    color: 'green',
-  }),
-  new Schedule({
+    color: '#fb5607',
+  },
+  {
     id: '4',
     start: dayjs('2023-01-01 12:00:00'),
     end: dayjs('2023-01-01 14:00:00'),
     title: '코딩 공부',
-    color: 'lavender',
-  }),
-  new Schedule({
+    color: '#d9ed92',
+  },
+  {
     id: '5',
     start: dayjs('2023-01-01 24:00:00'),
     end: dayjs('2023-01-01 24:00:00'),
     title: '취침',
-    color: 'blue',
-  }),
+    color: '#3a86ff',
+  },
 ];
 
 export const ScheduleContainer = () => {
-  return (
-    <S.Wrap>
-      {schedules.map((schedule) => (
-        <ScheduleRow key={schedule.id} schedule={schedule} />
-      ))}
-    </S.Wrap>
+  const schedulesWithSpaces = useMemo(
+    () => scheduleFactory.createSchedules(data),
+    [data],
   );
+
+  const components = useMemo(() => {
+    return schedulesWithSpaces.map((value) => {
+      if (value instanceof Schedule) {
+        return <ScheduleRow key={value.id} schedule={value} />;
+      }
+      return <ScheduleSpaceRow key={value.startTime} scheduleSpace={value} />;
+    });
+  }, [schedulesWithSpaces]);
+
+  return <S.Wrap>{components}</S.Wrap>;
 };
 
 const S = {
