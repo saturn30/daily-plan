@@ -1,4 +1,6 @@
 import styled from '@emotion/native';
+import { useState } from 'react';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
 import { type Schedule } from '../domains';
 
@@ -7,6 +9,8 @@ interface Props {
 }
 
 export const ScheduleRow = ({ schedule }: Props) => {
+  const [isDone, setIsDone] = useState(false);
+
   return (
     <S.Wrap>
       {schedule.isZeroDuration ? (
@@ -21,14 +25,20 @@ export const ScheduleRow = ({ schedule }: Props) => {
       )}
       <S.Line height={schedule.lineHeight} color={schedule.color} />
       <S.ContentWrap>
-        <S.Title>{schedule.title}</S.Title>
+        <S.Title isDone={isDone}>{schedule.title}</S.Title>
         <S.Description>
           {schedule.isZeroDuration
             ? schedule.startTime
             : `${schedule.startTime} ~ ${schedule.endTime} (${schedule.duration}m)`}
         </S.Description>
       </S.ContentWrap>
-      <S.CheckWrap></S.CheckWrap>
+      <S.CheckWrap>
+        <BouncyCheckbox
+          isChecked={isDone}
+          onPress={setIsDone}
+          fillColor={schedule.color}
+        />
+      </S.CheckWrap>
     </S.Wrap>
   );
 };
@@ -57,13 +67,16 @@ const S = {
     border-radius: 100px;
   `,
   ContentWrap: styled.View`
+    flex: 1;
     padding-left: 24px;
     justify-content: center;
   `,
-  Title: styled.Text`
+  Title: styled.Text<{ isDone: boolean }>`
+    text-decoration-line: ${({ isDone }) => (isDone ? 'line-through' : '')};
     font-weight: 500;
     font-size: 16px;
-    color: ${({ theme }) => theme.color.primaryText};
+    color: ${({ isDone, theme }) =>
+      isDone ? theme.color.secondaryText : theme.color.primaryText};
   `,
   Description: styled.Text`
     margin-top: 4px;
