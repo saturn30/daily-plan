@@ -36,6 +36,13 @@ const data = [
     color: '#d9ed92',
   },
   {
+    id: '6',
+    start: dayjs('2023-01-01 14:00:00'),
+    end: dayjs('2023-01-01 14:30:00'),
+    title: '책읽기',
+    color: '#d9ed92',
+  },
+  {
     id: '5',
     start: dayjs('2023-01-01 24:00:00'),
     end: dayjs('2023-01-01 24:00:00'),
@@ -66,6 +73,6 @@ const S = {
   Wrap: styled.View`
     flex: 1;
     margin-top: 24px;
+    padding-bottom: 48px;
   `,
-  Text: styled.Text``,
 };

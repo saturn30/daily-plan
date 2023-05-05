@@ -15,6 +15,14 @@ export const ScheduleSpaceRow = ({ scheduleSpace }: Props) => {
           colors={[scheduleSpace.color.top, scheduleSpace.color.bottom]}
           height={scheduleSpace.lineHeight}
         />
+        {scheduleSpace.isSkipped && (
+          <S.DotWrap>
+            <S.Dot />
+            <S.Dot />
+            <S.Dot />
+            <S.Dot />
+          </S.DotWrap>
+        )}
       </S.LineWrap>
     </S.Wrap>
   );
@@ -27,11 +35,22 @@ const S = {
   LineWrap: styled.View`
     margin-left: 12px;
     width: 24px;
+    justify-content: center;
     align-items: center;
   `,
   Line: styled(LinearGradient)<{ height: number }>`
     height: ${({ height }) => height}px;
     width: 3px;
-    background-color: blue;
+  `,
+  DotWrap: styled.View`
+    position: absolute;
+    height: 50px;
+    justify-content: space-between;
+    /* background-color: blue; */
+  `,
+  Dot: styled.View`
+    width: 4px;
+    height: 8px;
+    background-color: ${({ theme }) => theme.color.background};
   `,
 };

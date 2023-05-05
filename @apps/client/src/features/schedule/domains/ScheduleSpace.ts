@@ -32,6 +32,14 @@ export class ScheduleSpace {
   }
 
   get lineHeight() {
-    return Math.min((this.end.diff(this.start, 'm') / 15 + 1) * 10, 150);
+    return Math.min((this.duration / 15 + 1) * 15, 100);
+  }
+
+  get duration() {
+    return this.end.diff(this.start, 'm');
+  }
+
+  get isSkipped() {
+    return this.duration > 100;
   }
 }
