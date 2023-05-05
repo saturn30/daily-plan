@@ -1,12 +1,21 @@
+import styled from '@emotion/native';
+
 import { Layout } from '@/common/components/Layout';
 import { SmallCalendarContainer } from '@/features/calendar';
-import { ScheduleContainer } from '@/features/schedule';
+import { ScheduleContainer, QuotesContainer } from '@/features/schedule';
 
 export const HomeScreen = () => {
   return (
     <Layout>
       <SmallCalendarContainer />
-      <ScheduleContainer />
+      <S.ContentWrap>
+        <QuotesContainer />
+        <ScheduleContainer />
+      </S.ContentWrap>
     </Layout>
   );
+};
+
+const S = {
+  ContentWrap: styled.ScrollView``,
 };

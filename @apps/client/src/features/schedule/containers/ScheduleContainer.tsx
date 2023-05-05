@@ -13,7 +13,7 @@ export const ScheduleContainer = () => {
 };
 
 const S = {
-  Wrap: styled.ScrollView`
+  Wrap: styled.View`
     flex: 1;
     margin-top: 8px;
   `,
