@@ -19,7 +19,10 @@ export const QuoteText = ({ quote }: Props) => {
 const S = {
   Wrap: styled.View`
     margin-top: 16px;
-    padding-left: 16px;
+    margin-left: 16px;
+    padding-left: 8px;
+    border-left-width: 4px;
+    border-color: ${({ theme }) => theme.color.primary};
   `,
   Text: styled.Text`
     font-weight: 600;
