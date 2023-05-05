@@ -32,6 +32,7 @@ export const DragableSchedule = ({ schedule }: Props) => {
 const S = {
   Wrap: styled.View`
     position: relative;
+    margin: 0 20px;
   `,
   SnapShotWrap: styled.View`
     position: absolute;

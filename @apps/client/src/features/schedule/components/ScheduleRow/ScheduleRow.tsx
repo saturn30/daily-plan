@@ -46,7 +46,6 @@ export const ScheduleRow = ({ schedule }: Props) => {
 const S = {
   Wrap: styled.View`
     flex-direction: row;
-    padding: 0 20px;
   `,
   TimeWrap: styled.View<{ isZeroDuration?: boolean }>`
     width: 40px;
