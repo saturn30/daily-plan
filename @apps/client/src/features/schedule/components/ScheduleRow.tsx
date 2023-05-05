@@ -1,30 +1,31 @@
 import styled from '@emotion/native';
-import { type Dayjs } from 'dayjs';
+
+import { type Schedule } from '../domains';
 
 interface Props {
-  time: {
-    start: Dayjs;
-    end: Dayjs;
-  };
-  color: string;
-  title: string;
+  schedule: Schedule;
 }
 
-export const Schedule = ({ time, color, title }: Props) => {
-  const lineHeight = getLineHeight(time);
-
+export const ScheduleRow = ({ schedule }: Props) => {
   return (
     <S.Wrap>
-      <S.TimeWrap>
-        <S.Time>{time.start.format('HH:mm')}</S.Time>
-        <S.Time>{time.end.format('HH:mm')}</S.Time>
-      </S.TimeWrap>
-      <S.Line height={lineHeight} color={color} />
+      {schedule.isZeroDuration ? (
+        <S.TimeWrap isZeroDuration>
+          <S.Time>{schedule.startTime}</S.Time>
+        </S.TimeWrap>
+      ) : (
+        <S.TimeWrap>
+          <S.Time>{schedule.startTime}</S.Time>
+          <S.Time>{schedule.endTime}</S.Time>
+        </S.TimeWrap>
+      )}
+      <S.Line height={schedule.lineHeight} color={schedule.color} />
       <S.ContentWrap>
-        <S.Title>{title}</S.Title>
+        <S.Title>{schedule.title}</S.Title>
         <S.Description>
-          {time.start.format('HH:mm')} ~ {time.end.format('HH:mm')} (
-          {time.end.diff(time.start, 'm')}m)
+          {schedule.isZeroDuration
+            ? schedule.startTime
+            : `${schedule.startTime} ~ ${schedule.endTime} (${schedule.duration}m)`}
         </S.Description>
       </S.ContentWrap>
       <S.CheckWrap></S.CheckWrap>
@@ -32,18 +33,15 @@ export const Schedule = ({ time, color, title }: Props) => {
   );
 };
 
-function getLineHeight(time: Props['time']) {
-  return (time.end.diff(time.start, 'm') / 15 + 1) * 15;
-}
-
 const S = {
   Wrap: styled.View`
     flex-direction: row;
     padding: 0 20px;
   `,
-  TimeWrap: styled.View`
+  TimeWrap: styled.View<{ isZeroDuration?: boolean }>`
     width: 40px;
-    justify-content: space-between;
+    justify-content: ${({ isZeroDuration }) =>
+      isZeroDuration ? 'center' : 'space-between'};
     align-items: center;
   `,
   Time: styled.Text`

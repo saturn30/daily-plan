@@ -20,6 +20,7 @@ module.exports = {
   plugins: ['react', 'import', '@typescript-eslint/eslint-plugin'],
   rules: {
     '@typescript-eslint/explicit-function-return-type': 'off',
+    '@typescript-eslint/strict-boolean-expressions': 'off',
     'react/react-in-jsx-scope': 'off',
     '@typescript-eslint/no-floating-promises': 'off',
     '@typescript-eslint/no-misused-promises': 'off',

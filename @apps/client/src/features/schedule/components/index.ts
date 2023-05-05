@@ -1,2 +1,2 @@
 export * from './QuoteText';
-export * from './Schedule';
+export * from './ScheduleRow';
