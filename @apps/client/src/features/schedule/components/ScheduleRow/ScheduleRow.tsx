@@ -2,7 +2,7 @@ import styled from '@emotion/native';
 import { useState } from 'react';
 import BouncyCheckbox from 'react-native-bouncy-checkbox';
 
-import { type Schedule } from '../domains';
+import { type Schedule } from '@/features/schedule/domains';
 
 interface Props {
   schedule: Schedule;

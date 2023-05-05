@@ -4,7 +4,7 @@ import { useMemo } from 'react';
 
 import { COLOR } from '@/common/constants';
 
-import { ScheduleRow, ScheduleSpaceRow } from '../components';
+import { DragableSchedule, ScheduleSpaceRow } from '../components';
 import { Schedule } from '../domains';
 import { scheduleFactory } from '../useCases';
 
@@ -62,7 +62,7 @@ export const ScheduleContainer = () => {
   const components = useMemo(() => {
     return schedulesWithSpaces.map((value) => {
       if (value instanceof Schedule) {
-        return <ScheduleRow key={value.id} schedule={value} />;
+        return <DragableSchedule key={value.id} schedule={value} />;
       }
       return <ScheduleSpaceRow key={value.startTime} scheduleSpace={value} />;
     });

@@ -34,7 +34,7 @@ export class Schedule {
   }
 
   get lineHeight() {
-    return (this.end.diff(this.start, 'm') / 15 + 1) * 15;
+    return Math.ceil((this.end.diff(this.start, 'm') / 15 + 1) * 15);
   }
 
   get isZeroDuration() {

@@ -32,7 +32,7 @@ export class ScheduleSpace {
   }
 
   get lineHeight() {
-    return Math.min((this.duration / 15 + 1) * 15, 100);
+    return Math.min(Math.ceil((this.duration / 15 + 1) * 15), 100);
   }
 
   get duration() {
