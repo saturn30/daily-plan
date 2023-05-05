@@ -15,7 +15,6 @@
   "dependencies": {
     "@emotion/native": "^11.10.6",
     "@emotion/react": "^11.10.6",
-    "@mgcrea/react-native-dnd": "^1.1.0",
     "@react-native-async-storage/async-storage": "1.17.11",
     "@react-native-firebase/analytics": "^17.4.3",
     "@react-native-firebase/app": "^17.4.3",
