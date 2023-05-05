@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { type PanGestureHandlerGestureEvent } from 'react-native-gesture-handler';
 import {
   runOnJS,
@@ -9,14 +9,19 @@ import {
 } from 'react-native-reanimated';
 
 export const useScheduleDrag = () => {
+  const isAnimated = useRef(false);
   const [isMoving, setIsMoving] = useState(false);
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
 
   const stopMoving = () => {
     setTimeout(() => {
-      setIsMoving(false);
+      !isAnimated.current && setIsMoving(false);
     }, 1000);
+  };
+
+  const setRef = (value: boolean) => {
+    isAnimated.current = value;
   };
 
   const panGestureEvent = useAnimatedGestureHandler<
@@ -27,6 +32,7 @@ export const useScheduleDrag = () => {
       context.translateX = translateX.value;
       context.translateY = translateY.value;
       runOnJS(setIsMoving)(true);
+      runOnJS(setRef)(true);
     },
     onActive: (event, context) => {
       translateX.value = event.translationX + context.translateX;
@@ -35,6 +41,7 @@ export const useScheduleDrag = () => {
     onEnd: (event, context) => {
       translateX.value = withSpring(0, { mass: 0.7 });
       translateY.value = withSpring(0, { mass: 0.7 });
+      runOnJS(setRef)(false);
       runOnJS(stopMoving)();
     },
   });

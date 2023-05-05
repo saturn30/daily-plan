@@ -14,7 +14,7 @@ export const DragableSchedule = ({ schedule }: Props) => {
   const { panGestureEvent, rStyle, isMoving } = useScheduleDrag();
 
   return (
-    <S.Wrap>
+    <S.Wrap style={{ zIndex: isMoving ? 10 : 0 }}>
       <PanGestureHandler onGestureEvent={panGestureEvent}>
         <Animated.View style={rStyle}>
           <ScheduleRow schedule={schedule} />
