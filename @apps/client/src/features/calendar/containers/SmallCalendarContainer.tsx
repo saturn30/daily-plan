@@ -7,6 +7,13 @@ export const SmallCalendarContainer = () => {
   const [selectedDay, setSelectedDay] = useState(dayjs());
   const [days, setDays] = useState(() => createDefaultDays(selectedDay));
 
+  function updateDays(callback: (value: Dayjs) => Dayjs) {
+    const nextDays = days.map(callback);
+    const selectedDayIndex = days.findIndex((day) => day === selectedDay);
+    setDays(nextDays);
+    setSelectedDay(nextDays[selectedDayIndex]);
+  }
+
   const onNextButtonClick = () => {
     updateDays((day) => day.add(7, 'day'));
   };
@@ -24,22 +31,15 @@ export const SmallCalendarContainer = () => {
       onPrevButtonClick={onPrevButtonClick}
     />
   );
-
-  function createDefaultDays(now: Dayjs) {
-    const base = now.subtract(now.day(), 'day');
-    const result = [];
-
-    for (let i = 0; i < 7; i++) {
-      result.push(base.add(i, 'day'));
-    }
-
-    return result;
-  }
-
-  function updateDays(callback: (value: Dayjs) => Dayjs) {
-    const nextDays = days.map(callback);
-    const selectedDayIndex = days.findIndex((day) => day === selectedDay);
-    setDays(nextDays);
-    setSelectedDay(nextDays[selectedDayIndex]);
-  }
 };
+
+function createDefaultDays(now: Dayjs) {
+  const base = now.subtract(now.day(), 'day');
+  const result = [];
+
+  for (let i = 0; i < 7; i++) {
+    result.push(base.add(i, 'day'));
+  }
+
+  return result;
+}
