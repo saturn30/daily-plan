@@ -1,6 +1,6 @@
 import styled from '@emotion/native';
+import { Feather } from '@expo/vector-icons';
 import { type BottomTabBarProps } from '@react-navigation/bottom-tabs';
-import { Text } from 'react-native';
 
 export const MyTabBar = ({
   state,
@@ -45,9 +45,11 @@ export const MyTabBar = ({
             onPress={onPress}
             onLongPress={onLongPress}
           >
-            <Text style={{ color: isFocused ? '#673ab7' : '#222' }}>
-              {label}
-            </Text>
+            <S.Icon
+              name={options.tabBarLabel as any}
+              size={20}
+              isFocused={isFocused}
+            />
           </S.Button>
         );
       })}
@@ -57,13 +59,18 @@ export const MyTabBar = ({
 
 const S = {
   Wrap: styled.SafeAreaView`
-    border-top-left-radius: 20px;
-    border-top-right-radius: 20px;
+    border-top-width: 1px;
+    border-color: ${({ theme }) => theme.color.tintLine};
+    background-color: ${({ theme }) => theme.color.background};
   `,
   Button: styled.TouchableOpacity`
     flex: 1;
-    height: 60px;
+    height: 50px;
     align-items: center;
     justify-content: center;
+  `,
+  Icon: styled(Feather)<{ isFocused: boolean }>`
+    color: ${({ theme, isFocused }) =>
+      isFocused ? theme.color.primaryText : theme.color.secondaryText};
   `,
 };

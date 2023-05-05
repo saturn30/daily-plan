@@ -12,9 +12,21 @@ export const BottomNavigator = () => {
       tabBar={(props) => <MyTabBar {...props} />}
       screenOptions={{ headerShown: false }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Statistics" component={StatisticsScreen} />
-      <Tab.Screen name="Settings" component={SettingScreen} />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{ tabBarLabel: 'home' }}
+      />
+      <Tab.Screen
+        name="Statistics"
+        component={StatisticsScreen}
+        options={{ tabBarLabel: 'bar-chart-2' }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingScreen}
+        options={{ tabBarLabel: 'settings' }}
+      />
     </Tab.Navigator>
   );
 };
