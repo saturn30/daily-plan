@@ -2,6 +2,8 @@ import styled from '@emotion/native';
 import dayjs from 'dayjs';
 import { useMemo } from 'react';
 
+import { COLOR } from '@/common/constants';
+
 import { ScheduleRow, ScheduleSpaceRow } from '../components';
 import { Schedule } from '../domains';
 import { scheduleFactory } from '../useCases';
@@ -12,42 +14,42 @@ const data = [
     start: dayjs('2023-01-01 07:00:00'),
     end: dayjs('2023-01-01 07:00:00'),
     title: '기상',
-    color: '#ffbe0b',
+    color: COLOR.PRIMARY,
   },
   {
     id: '2',
     start: dayjs('2023-01-01 09:00:00'),
     end: dayjs('2023-01-01 10:00:00'),
     title: '아침 식사',
-    color: '#ffc8dd',
+    color: '#75BFCF',
   },
   {
     id: '3',
     start: dayjs('2023-01-01 10:20:00'),
     end: dayjs('2023-01-01 11:00:00'),
     title: '아침 산책',
-    color: '#fb5607',
+    color: '#F0F3BD',
   },
   {
     id: '4',
     start: dayjs('2023-01-01 12:00:00'),
     end: dayjs('2023-01-01 14:00:00'),
     title: '코딩 공부',
-    color: '#d9ed92',
+    color: COLOR.PRIMARY,
   },
   {
     id: '6',
     start: dayjs('2023-01-01 14:00:00'),
     end: dayjs('2023-01-01 14:30:00'),
     title: '책읽기',
-    color: '#d9ed92',
+    color: '#61E786',
   },
   {
     id: '5',
     start: dayjs('2023-01-01 24:00:00'),
     end: dayjs('2023-01-01 24:00:00'),
     title: '취침',
-    color: '#3a86ff',
+    color: '#7144D2',
   },
 ];
 
